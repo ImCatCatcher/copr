@@ -1,9 +1,9 @@
 Name:           rust-tytanic
 Version:        0.2.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A test runner for typst projects.
-Provides:	tytanic
-Provides:	tt
+Provides:       tytanic
+Provides:	    tt
 
 License:        MIT
 URL:            https://github.com/tingerrr/tytanic
@@ -13,7 +13,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}
 BuildRequires:  openssl-devel
 BuildRequires:	cargo
 
-Requires: typst
+Requires: rust-typst >= 0.13.1
 
 %global debug_package %{nil}
 
@@ -36,5 +36,8 @@ install -m 755 target/release/tt %{buildroot}/%{_bindir}/tt
 %doc README.md
 
 %changelog
+* Sat Mar 22 2025 Arseniy Zasypkin <imcatcatcher@internet.ru> 0.2.2-2
+ - Add rust-typst v0.13.1 dependency.
+
 * Sat Mar 22 2025 Arseniy Zasypkin <imcatcatcher@internet.ru> 0.2.2-1
  - Initial package.
