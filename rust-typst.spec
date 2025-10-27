@@ -1,17 +1,18 @@
 Name:           rust-typst
-Version:        0.13.1
-Release:        2%{?dist}
+Version:        0.14.0
+Release:        1%{?dist}
 Summary:        A new markup-based typesetting system that is powerful and easy to learn.
 Provides:       typst
 Obsoletes:      typst
 
 License:        Apache-2.0
 URL:            https://github.com/typst/typst
-Source:	    	https://github.com/typst/typst/archive/refs/tags/v0.13.1.tar.gz#/%{name}-%{version}.tar.gz
+Source:	    	https://github.com/typst/typst/archive/refs/tags/v0.14.0.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 BuildRequires:  openssl-devel
 BuildRequires:	cargo
+BuildRequires:  rust
 
 %global debug_package %{nil}
 
@@ -34,6 +35,9 @@ install -m 755 target/release/typst %{buildroot}/%{_bindir}/typst
 %doc README.md
 
 %changelog
+* Mon Oct 27 2025 Arseniy Zasypkin <imcatcatcher@internet.ru> 0.14.0-1
+ - Updated to 0.14.0.
+
 * Sat Mar 22 2025 Arseniy Zasypkin <imcatcatcher@internet.ru> 0.13.1-2
  - Add typst obsoletes.
 
